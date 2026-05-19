@@ -7,7 +7,7 @@ import Feed from './components/Feed';
 import './App.css';
 
 function App() {
-  const [view, setView] = useState<'home' | 'profile'>('home');
+  const [view, setView] = useState('home');
 
   return (
     <div className="app-layout">
@@ -18,10 +18,12 @@ function App() {
           <div onClick={() => setView('profile')} style={{ cursor: 'pointer' }}>
             <Profile />
           </div>
+
           <hr className="divider" />
+
           <Navbar currentView={view} setView={setView} />
         </aside>
-        
+
         <main className="content-area">
           {view === 'home' ? (
             <>
@@ -31,9 +33,10 @@ function App() {
           ) : (
             <div className="profile-page-view">
               <div className="profile-header-expanded">
-                <Profile /> {/* Reutilizamos el componente para la cabecera del perfil */}
+                {/* Reutilizamos el componente para la cabecera del perfil */}
+                <Profile />
               </div>
-              
+
               <div className="profile-tabs">
                 <span className="tab active">POSTS</span>
                 <span className="tab">REELS</span>
@@ -44,7 +47,10 @@ function App() {
                 {/* Simulamos las fotos propias del usuario */}
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
                   <div key={item} className="profile-post-item">
-                    <img src={`https://picsum.photos/500/500?random=${item}`} alt="User post" />
+                    <img
+                      src={`https://picsum.photos/500/500?random=${item}`}
+                      alt="User post"
+                    />
                   </div>
                 ))}
               </div>

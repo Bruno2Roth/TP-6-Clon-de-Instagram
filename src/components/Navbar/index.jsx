@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, Heart, MessageCircle, Send, Bookmark } from 'lucide-react';
-import './PostModal.css';
+import './Navbar.css';
 
 const PostModal = ({ post, onClose }) => {
   return (
