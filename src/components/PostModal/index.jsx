@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Heart, MessageCircle, Send, Bookmark } from 'lucide-react';
 import './PostModal.css';
+import Comment from '../Comment';
 
 const PostModal = ({ post, onClose }) => {
     console.log("POST MODAL:", post);
@@ -44,13 +45,9 @@ const PostModal = ({ post, onClose }) => {
                                 #cats #react #vibes
                             </p>
 
-                            <div className="fake-comment">
-                                <strong>user_99:</strong> So cute! ❤️
-                            </div>
+                            <Comment/>
 
-                            <div className="fake-comment">
-                                <strong>dev_guru:</strong> This cat codes better than me.
-                            </div>
+                            <Comment/>
                         </div>
 
                         <div className="detail-footer">
